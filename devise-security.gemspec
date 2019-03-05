@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'easy_captcha'
   s.add_development_dependency 'm'
   s.add_development_dependency 'minitest'
+  s.add_development_dependency 'mocha', "~> 0.14.0"
   s.add_development_dependency 'omniauth', '< 2.0.0' # https://github.com/devise-security/devise-security/issues/267
   s.add_development_dependency 'pry-byebug'
   s.add_development_dependency 'pry-rescue'
@@ -42,7 +43,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop', '~> 0.80.0' # NOTE: also update .codeclimate.yml and make sure it uses the same version
   s.add_development_dependency 'rubocop-rails'
   s.add_development_dependency 'simplecov-lcov'
+  s.add_development_dependency 'shoulda'
   s.add_development_dependency 'solargraph'
   s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'timecop'
+  s.add_development_dependency 'webrat'
   s.add_development_dependency 'wwtd'
 end

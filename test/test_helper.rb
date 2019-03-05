@@ -16,6 +16,10 @@ SimpleCov.start do
   add_group 'Security Questionable', 'security_question'
   add_group 'Session Limitable', 'session_limitable'
   add_group 'Tests', 'test'
+  add_group 'Password Archivable', 'password_archivable'
+  add_group 'Password Expirable', 'password_expirable'
+  add_group 'Session Limitable', 'session_limitable'
+  add_group 'Session Traceable', 'session_traceable'
 end
 
 if ENV['CI']
@@ -50,4 +54,17 @@ class Minitest::Test
   end
 end
 
+require 'mocha/setup'
+require 'shoulda'
+require 'timecop'
+require 'webrat'
+Webrat.configure do |config|
+  config.mode = :rails
+  config.open_error_files = false
+end
+
 DatabaseCleaner.clean
+
+# Add support to load paths so we can overwrite broken webrat setup
+$LOAD_PATH.unshift File.expand_path('support', __dir__)
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }

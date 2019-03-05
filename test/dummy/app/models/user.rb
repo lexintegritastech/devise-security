@@ -16,8 +16,9 @@ class User < ApplicationRecord
          :secure_validatable,
          :security_questionable,
          :session_limitable,
+         :session_traceable,
          :timeoutable,
-         :trackable,
+        #  :trackable,
          :validatable
 
   has_many :widgets
